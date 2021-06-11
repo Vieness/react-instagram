@@ -3,15 +3,8 @@ import {Formik} from 'formik';
 import {useDispatch, useSelector} from "react-redux";
 import {registerUser} from "../redux/actions/authActions";
 
-const Register = ({history}) => {
-  const {success} = useSelector(state => state.auth);
+const Register = () => {
   const dispatch = useDispatch();
-
-  useEffect(()=> {
-    if (success) {
-      history.push("/posts")
-    }
-  }, [success])
 
   return (
     <>
