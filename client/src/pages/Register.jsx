@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Formik} from 'formik';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {registerUser} from "../redux/actions/authActions";
 
 const Register = () => {
