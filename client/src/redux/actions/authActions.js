@@ -12,9 +12,7 @@ export const registerUserSuccess = data => ({
 
 export const registerUserFailure = error => ({
   type: REGISTER_USER_FAILURE,
-  payload: {
-    error
-  }
+  payload: error
 });
 
 export const registerUser = (data) => {
@@ -33,3 +31,4 @@ export const registerUser = (data) => {
       .catch(error => dispatch(registerUserFailure(error)));
   }
 };
+
