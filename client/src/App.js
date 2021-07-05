@@ -3,7 +3,7 @@ import {Redirect, Route, Switch } from "react-router";
 import Register from "./pages/Register";
 import Posts from "./pages/Posts";
 import {useSelector} from "react-redux";
-import Login from "./pages/Login";
+import Login from "./pages/SignIn";
 
 function App() {
   const {authorized} = useSelector(state => state.auth);

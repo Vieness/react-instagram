@@ -1,10 +1,15 @@
 import React from 'react';
+import {AppBar} from "@material-ui/core";
 
 const Posts = () => {
+
+
   return (
-    <div>
-      posts
-    </div>
+    <>
+      <AppBar>
+
+      </AppBar>
+    </>
   );
 };
 
