@@ -1,5 +1,6 @@
 import {REGISTER_USER_FAILURE, REGISTER_USER_STARTED, REGISTER_USER_SUCCESS} from "../types";
 import LocalStorageService from "../../services/localStorageService";
+import axios from "axios";
 
 export const registerUserStarted = () => ({
   type: REGISTER_USER_STARTED
@@ -15,7 +16,7 @@ export const registerUserFailure = error => ({
   payload: error
 });
 
-export const registerUser = (data) => {
+/*export const registerUser = (data) => {
   return async (dispatch) => {
     dispatch(registerUserStarted());
     fetch('/api/v1/auth/register', {
@@ -29,6 +30,20 @@ export const registerUser = (data) => {
         dispatch(registerUserSuccess(res))
       })
       .catch(error => dispatch(registerUserFailure(error)));
+  }
+};*/
+
+
+export const registerUser = (data) => {
+  return async(dispatch)=>{
+    dispatch(registerUserStarted());
+    axios.post('/api/v1/auth/register',data)
+        .then(res => {
+          LocalStorageService.setToken(res.data.token)
+          dispatch(registerUserSuccess(res))
+        })
+        .catch(function(error)
+        {registerUserFailure(error)})
   }
 };
 

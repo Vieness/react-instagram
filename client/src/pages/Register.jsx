@@ -1,13 +1,12 @@
 import React from 'react';
-import {Formik} from 'formik';
 import {useDispatch} from "react-redux";
-import {registerUser} from "../redux/actions/authActions";
+
 
 const Register = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  return (
-    <>
+  return
+    /*<>
       <Formik
         initialValues={{email: '', password: '', name: '', firstName: '', lastName: '', photo: ''}}
         validate={values => {
@@ -38,7 +37,7 @@ const Register = () => {
             handleBlur,
             handleSubmit,
             isSubmitting,
-            /* and other goodies */
+            /!* and other goodies *!/
           }) => (
           <form onSubmit={handleSubmit}>
             <input
@@ -99,8 +98,8 @@ const Register = () => {
           </form>
         )}
       </Formik>
-    </>
-  );
+    </>*/
+
 };
 
 export default Register;
